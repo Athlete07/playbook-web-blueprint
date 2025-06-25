@@ -1,8 +1,9 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* Enhanced design system with educational focus */
 
 @layer base {
   :root {
@@ -15,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 221.2 83.2% 53.3%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -32,24 +33,17 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 221.2 83.2% 53.3%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -63,7 +57,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -98,6 +92,99 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Typography enhancements */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+
+  /* Accessibility skip link */
+  .skip-link {
+    @apply absolute left-0 top-0 bg-blue-600 text-white px-4 py-2 rounded-br-md transform -translate-y-full focus:translate-y-0 transition-transform z-50;
+  }
+
+  /* Prose styling for content sections */
+  .prose {
+    @apply max-w-none;
+  }
+  
+  .prose p {
+    @apply leading-relaxed mb-4;
+  }
+  
+  .prose h3 {
+    @apply text-xl font-semibold mt-8 mb-4 text-gray-900;
+  }
+  
+  .prose h4 {
+    @apply text-lg font-medium mt-6 mb-3 text-gray-800;
+  }
+  
+  .prose ul {
+    @apply list-disc list-inside space-y-2 mb-4;
+  }
+  
+  .prose ol {
+    @apply list-decimal list-inside space-y-2 mb-4;
+  }
+
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-blue-600;
+  }
+
+  /* Enhanced button hover states */
+  .btn-hover-lift {
+    @apply transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scale-in 0.2s ease-out;
+  }
+
+  /* Interactive elements */
+  .story-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+
+  /* Educational content styling */
+  .learning-card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .highlight-box {
+    @apply bg-blue-50 border-l-4 border-blue-500 p-4 my-6 rounded-r-lg;
+  }
+  
+  .tip-box {
+    @apply bg-green-50 border border-green-200 rounded-lg p-4 my-6;
+  }
+  
+  .warning-box {
+    @apply bg-yellow-50 border border-yellow-200 rounded-lg p-4 my-6;
   }
 }

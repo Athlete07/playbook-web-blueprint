@@ -1,23 +1,62 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>playbook-web-blueprint</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-
-    <meta property="og:title" content="playbook-web-blueprint" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
+    <title>{{PAGE_TITLE}} | Global Trade Playbook Academy</title>
+    <meta name="description" content="{{PAGE_DESCRIPTION}}" />
+    <meta name="keywords" content="global trade, economics, international business, trade education, export, import" />
+    
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="{{PAGE_TITLE}} | Global Trade Playbook Academy" />
+    <meta property="og:description" content="{{PAGE_DESCRIPTION}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="/assets/images/og-placeholder.jpg" />
+    <meta property="og:url" content="{{CURRENT_URL}}" />
+    
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:title" content="{{PAGE_TITLE}}" />
+    <meta name="twitter:description" content="{{PAGE_DESCRIPTION}}" />
+    <meta name="twitter:image" content="/assets/images/og-placeholder.jpg" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "{{PAGE_TITLE}}",
+      "author": { 
+        "@type": "Organization", 
+        "name": "Global Trade Academy",
+        "url": "https://globaltradeacademy.com"
+      },
+      "description": "{{PAGE_DESCRIPTION}}",
+      "educationalLevel": "Beginner to Intermediate",
+      "keywords": ["trade", "economics", "export", "import", "international business"],
+      "datePublished": "{{PUBLISH_DATE}}",
+      "dateModified": "{{MODIFIED_DATE}}",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Global Trade Academy"
+      }
+    }
+    </script>
   </head>
 
   <body>
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to content</a>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
